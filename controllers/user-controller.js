@@ -1,5 +1,5 @@
 const { User } = require('../models')
-//getting all the Users
+
 const userController = {
   getAllUsers(req, res) {
     User.find({})
@@ -14,7 +14,7 @@ const userController = {
         res.status(500).json(err)
       })
   },
-  //getting Users only by Id
+  
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
